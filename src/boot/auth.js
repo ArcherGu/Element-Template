@@ -7,7 +7,6 @@ const whiteList = ['/login'];
 export default ({ router, store, Vue }) => {
     router.beforeEach((to, from, next) => {
         if (getToken()) {
-            console.log("Here");
             if (!store.getters['auth/loggedIn']) {
                 store.dispatch('auth/fetch').then(() => {
                     next({ ...to });

@@ -102,7 +102,6 @@ export default {
                 if (valid) {
                     this.loading = true;
                     this.$auth.login(this.loginForm).then(() => {
-                        console.log("Go!!!");
                         this.$router.push('/');
                     }).catch((error) => {
                         if (error.response) {
